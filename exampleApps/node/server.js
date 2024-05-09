@@ -9,9 +9,9 @@ const redis = new Redis({
     ],
     name: process.env.REDIS_PRIMARY_NAME,
     family: 0,
-    sentinelPassword: process.env.REDIS_MASTER_PASSWORD,
+    sentinelPassword: process.env.REDIS_PRIMARY_PASSWORD,
     sentinelUsername: "default",
-    password: process.env.REDIS_MASTER_PASSWORD,
+    password: process.env.REDIS_PRIMARY_PASSWORD,
     username: "default"
   });
 
