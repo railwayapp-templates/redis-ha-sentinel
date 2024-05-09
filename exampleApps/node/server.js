@@ -7,7 +7,7 @@ const redis = new Redis({
       { host: process.env.SENTINEL2_PRIVATE_DOMAIN, port: 26379 },
       { host: process.env.SENTINEL3_PRIVATE_DOMAIN, port: 26379 },
     ],
-    name: "mymaster",
+    name: process.env.REDIS_PRIMARY_NAME,
     family: 0,
     sentinelPassword: process.env.REDIS_MASTER_PASSWORD,
     sentinelUsername: "default",
