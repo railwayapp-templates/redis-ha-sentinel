@@ -1,11 +1,15 @@
-# Use the official Redis image
 FROM redis:latest
 
-# Copy your Sentinel configuration file into the container
-COPY redis.conf /usr/local/etc/primary.conf
+COPY primary.conf /usr/local/etc/redis.conf
 
-# Set the working directory to where the configuration file is located
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 WORKDIR /usr/local/etc
 
-# Define the command to start Redis Sentinel with your configuration file
-CMD ["redis-server", "/usr/local/etc/primary.conf"]
+ARG REDIS_PORT
+ARG REDIS_PASSWORD
+ARG REDIS_PRIMARY_PASSWORD
+
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["redis-server", "/usr/local/etc/redis.conf"]
