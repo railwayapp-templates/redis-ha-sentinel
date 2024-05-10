@@ -2,6 +2,7 @@
 
 Deploy a Redis replica set with Sentinel for automated failover with the click of a button.
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/q589Jl)
 
 # About this Repo
 
